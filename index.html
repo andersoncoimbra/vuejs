@@ -9,6 +9,14 @@
 <body>
     <div id="app">
         <h1>{{titulo}}</h1>
+        <div v-if="usuario.id == 1">
+            Id: {{ usuario.id}} <br>
+            Nome: {{ usuario.name}} <br>
+            Profissão: {{ usuario.profisao }}
+        </div>
+        <div v-else>
+            Nenhum usuario encontrado 
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
@@ -16,7 +24,12 @@
             el: "#app",
             data: {
                 status: true,
-                titulo: "Vuejs do jeito Ninja"
+                titulo: "Vuejs do jeito Ninja",
+                usuario: {
+                    id: 1,
+                    nome: "Anderson Coimbra",
+                    profisao: "Programdor"
+                }
             },
         });
     </script>
